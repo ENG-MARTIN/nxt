@@ -5,159 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NXT Gadgets - Phone Accessories</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* General Styles */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #fdf2f0;
-            color: #333;
-        }
-
-        /* Navbar Styles */
-        .navbar {
-            background: linear-gradient(90deg, #000, #ff6347);
-        }
-
-        .navbar-brand {
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-        }
-
-        .navbar-nav .nav-link {
-            color: white !important;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: #ffd700 !important;
-        }
-
-        .search-bar input {
-            border-radius: 4px 0 0 4px;
-        }
-
-        .search-bar button {
-            border-radius: 0 4px 4px 0;
-            background-color: #ff4500;
-            color: white;
-            font-weight: bold;
-        }
-
-        .search-bar button:hover {
-            background-color: #ff6347;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 50px 20px;
-            background: linear-gradient(90deg, #ff6347, #ff4500);
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin: 0;
-        }
-
-        .hero p {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-
-        .hero button {
-            padding: 10px 20px;
-            font-size: 16px;
-            color: white;
-            background-color: #ff4500;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .hero button:hover {
-            background-color: #ff6347;
-        }
-
-        /* Product Section */
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .product-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .product-card .info {
-            padding: 15px;
-        }
-
-        .product-card .info h3 {
-            margin: 0;
-            font-size: 18px;
-        }
-
-        .product-card .info p {
-            margin: 5px 0;
-            color: #666;
-        }
-
-        .product-card .info button {
-            padding: 10px;
-            font-size: 14px;
-            background-color: #ff4500;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .product-card .info button:hover {
-            background-color: #ff6347;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: white;
-        }
-
-        .footer a {
-            color: #ff6347;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">NXT Gadgets</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -180,52 +32,137 @@
                 </ul>
                 <form class="d-flex search-bar">
                     <input class="form-control me-2" type="search" placeholder="Search for accessories..." aria-label="Search">
-                    <button class="btn" type="submit">Search</button>
+                    <button class="btn btn-primary" type="submit">Search</button>
                 </form>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <div class="hero">
-        <h1>Welcome to NXT Gadgets</h1>
-        <p>Your one-stop shop for all phone accessories</p>
-        <button>Shop Now</button>
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-flex align-items-center justify-content-center" style="height: 300px; background: #0056b3; color: white;">
+                    <h1>Welcome to NXT Gadgets</h1>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center" style="height: 300px; background: #003580; color: white;">
+                    <h1>Your one-stop shop for all phone accessories</h1>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center" style="height: 300px; background: #001f4d; color: white;">
+                    <h1>Explore our premium brands</h1>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Tabs for Phone Brands -->
+    <div class="container mt-4">
+        <ul class="nav nav-tabs" id="brandTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="apple-tab" data-bs-toggle="tab" data-bs-target="#apple" type="button" role="tab" aria-controls="apple" aria-selected="true">Apple</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="samsung-tab" data-bs-toggle="tab" data-bs-target="#samsung" type="button" role="tab" aria-controls="samsung" aria-selected="false">Samsung</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="xiaomi-tab" data-bs-toggle="tab" data-bs-target="#xiaomi" type="button" role="tab" aria-controls="xiaomi" aria-selected="false">Xiaomi</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="brandTabsContent">
+            <div class="tab-pane fade show active" id="apple" role="tabpanel" aria-labelledby="apple-tab">Apple Products...</div>
+            <div class="tab-pane fade" id="samsung" role="tabpanel" aria-labelledby="samsung-tab">Samsung Products...</div>
+            <div class="tab-pane fade" id="xiaomi" role="tabpanel" aria-labelledby="xiaomi-tab">Xiaomi Products...</div>
+        </div>
     </div>
 
     <!-- Products Section -->
     <div class="products container mt-4">
         <div class="product-card">
-            <img src="placeholder.jpg" alt="Product 1">
+            <img src="./imgs/pngegg(1).png" alt="Product 1">
             <div class="info">
-                <h3>Wireless Earbuds</h3>
-                <p>$59.99</p>
-                <button>Add to Cart</button>
+                <h3>Apple Phones</h3>
+                <p>New & UK Used</p>
+                <button class="btn btn-primary" onclick="sendToWhatsApp('Apple Phones, New & UK Used')">Add to Cart</button>
             </div>
         </div>
         <div class="product-card">
-            <img src="placeholder.jpg" alt="Product 2">
+            <img src="./imgs/pngegg(2).png" alt="Product 2">
             <div class="info">
                 <h3>Phone Case</h3>
-                <p>$19.99</p>
-                <button>Add to Cart</button>
+                <p>All Brands</p>
+                <button class="btn btn-primary" onclick="sendToWhatsApp('Phone Case, All Brands')">Add to Cart</button>
             </div>
         </div>
         <div class="product-card">
-            <img src="placeholder.jpg" alt="Product 3">
+            <img src="./imgs/pngegg(3).png" alt="Product 3">
             <div class="info">
                 <h3>Screen Protector</h3>
-                <p>$9.99</p>
-                <button>Add to Cart</button>
+                <p>For Every Phone</p>
+                <button class="btn btn-primary" onclick="sendToWhatsApp('Screen Protector, For Every Phone')">Add to Cart</button>
             </div>
         </div>
     </div>
 
+ <!-- Live Location Section -->
+ <div class="live-location container mt-4">
+    <h3>Our Live Location</h3>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509817!2d-122.41941568468157!3d37.77492977975968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064d5e9f47b%3A0x2c6e18b7b9788b0b!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sus!4v1617768390010!5m2!1sen!2sus" 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+    </iframe>
+</div>
     <!-- Footer -->
-    <div class="footer">
-        <p>&copy; 2025 NXT Gadgets. All rights reserved. | <a href="#">Privacy Policy</a></p>
+   <div class="footer bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <!-- About Section -->
+                <div class="col-md-4">
+                    <h5>About NXT Gadgets</h5>
+                    <p>We are your one-stop shop for high-quality phone accessories. From cases to chargers, we ensure you have the best products at competitive prices.</p>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p><strong>Email:</strong> support@nxtgadgets.com</p>
+                    <p><strong>Phone:</strong> +256 700 894 723</p>
+                    <p><strong>Address:</strong> Kisa KyaMaria Building</p>
+                </div>
+
+                <!-- Social Media Links -->
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <ul class="list-unstyled d-flex">
+                        <li><a href="#" class="text-light me-3"><i class="bi bi-facebook"></i> Facebook</a></li>
+                        <li><a href="#" class="text-light me-3"><i class="bi bi-twitter"></i> Twitter</a></li>
+                        <li><a href="#" class="text-light"><i class="bi bi-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="text-center">
+                <p>&copy; 2025 NXT Gadgets. All rights reserved. | <a href="#" class="text-light">Privacy Policy</a> | <a href="#" class="text-light">Terms of Service</a></p>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
